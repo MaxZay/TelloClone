@@ -9,7 +9,12 @@ const Desk = () => {
   return (
     <div className={'desk'}>
       {deskState.map((item) => (
-        <DeskItem name={item.name} key={item.name} />
+        <DeskItem
+          currentItem={item}
+          key={item.id}
+          deskState={deskState}
+          setDeskState={setDeskState}
+        />
       ))}
       <CreateDeskItem deskState={deskState} setDeskState={setDeskState} />
     </div>
