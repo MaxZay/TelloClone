@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.styles.css';
-import Desk from "../Desk/Desk";
+import React from 'react'
+import './App.styles.css'
+import AppRouter from '../AppRouter/AppRouter'
 
 function App() {
   return (
     <div className="App">
-      <Desk />
+      <AppRouter />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
