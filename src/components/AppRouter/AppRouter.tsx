@@ -7,7 +7,12 @@ const AppRouter = () => {
     <>
       <Switch>
         {routes.map((route) => (
-          <Route path={route.path} component={route.component} />
+          <Route
+            path={route.path}
+            component={route.component}
+            key={route.path}
+            exact={true}
+          />
         ))}
         <Redirect to={'/'} />
       </Switch>

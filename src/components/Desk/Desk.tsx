@@ -3,20 +3,17 @@ import DeskItem from '../DeskItem/DeskItem'
 import CreateDeskItem from '../CreateDeskItem/CreateDeskItem'
 import './Desk.styles.css'
 import { DeskItemType } from '../../types/DeskType'
+import { useAppSelector } from '../../store/hooks/hooks'
 
 const Desk = () => {
+  const deskItem = useAppSelector((state) => state.deskItems.values)
   const [deskState, setDeskState] = useState<DeskItemType[]>([])
   return (
     <div className={'desk'}>
-      {deskState.map((item) => (
-        <DeskItem
-          currentItem={item}
-          key={item.id}
-          deskState={deskState}
-          setDeskState={setDeskState}
-        />
+      {deskItem.map((item) => (
+        <DeskItem currentItem={item} key={item.id} />
       ))}
-      <CreateDeskItem deskState={deskState} setDeskState={setDeskState} />
+      <CreateDeskItem />
     </div>
   )
 }
