@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import deskItemsSlice from './slices/deskItemsSlice'
+import columnsSlice from './slices/columnsSlice'
+import tasksSlice from './slices/tasksSlice'
 
 export const store = configureStore({
   reducer: {
     deskItems: deskItemsSlice,
+    columns: columnsSlice,
+    tasks: tasksSlice,
   },
 })
 

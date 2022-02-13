@@ -1,0 +1,86 @@
+.create-new-columns {
+  width: 250px;
+  height: 60px;
+  background-color: purple;
+  color: wheat;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+  gap: 15px;
+  position: relative;
+}
+
+.create-new-columns__click {
+  height: 180px;
+}
+
+.create-new-columns__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-new-columns__form-input {
+  height: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+.create-new-columns__form-submit {
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: wheat;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid wheat;
+  border-radius: 3px;
+}
+
+.create-new-columns__form-submit:hover {
+  color: purple;
+  background-color: wheat;
+}
+
+.create-new-columns__form-errors {
+  color: red;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 10px;
+}
+
+.create-new-column__form-close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.create-new-column__form-close:hover {
+    transform: scale(1.1);
+}
+
+.create-new-columns__close-icon {
+  color: purple;
+}
+

@@ -4,6 +4,7 @@ import { DeskItemInterface } from './DeskItem.interface'
 import { useHistory } from 'react-router'
 import { useAppDispatch } from '../../store/hooks/hooks'
 import { removeItem } from '../../store/slices/deskItemsSlice'
+import { removeAllColumnsItemWithId } from '../../store/slices/columnsSlice'
 
 const DeskItem = (props: DeskItemInterface) => {
   const history = useHistory()
@@ -11,6 +12,7 @@ const DeskItem = (props: DeskItemInterface) => {
 
   const closeDeskItemClickHandler = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation()
+    dispatch(removeAllColumnsItemWithId(props.currentItem.id))
     dispatch(removeItem(props.currentItem.id))
   }
 
