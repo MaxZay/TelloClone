@@ -24,10 +24,17 @@ const columnsSlice = createSlice({
         (item) => item.deskItemId !== action.payload
       )
     },
+    addTaskItem: (state, action) => {
+      state.values[action.payload.index].items.push(action.payload.item)
+    },
   },
 })
 
-export const { addColumnItem, removeColumnItem, removeAllColumnsItemWithId } =
-  columnsSlice.actions
+export const {
+  addColumnItem,
+  removeColumnItem,
+  removeAllColumnsItemWithId,
+  addTaskItem,
+} = columnsSlice.actions
 
 export default columnsSlice.reducer

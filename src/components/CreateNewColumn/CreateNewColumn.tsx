@@ -7,6 +7,7 @@ import { CreateNewColumnInterface } from './CreateNewColumn.interface'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { ColumnType } from '../../types/ColumnType'
 
 type Input = {
   nameInput: string,
@@ -14,6 +15,7 @@ type Input = {
 
 const CreateNewColumn = ({ deskItemId }: CreateNewColumnInterface) => {
   const columns = useAppSelector((state) => state.columns.values)
+  //const currentDesk = columns.find((column) => column.deskItemId === deskItemId)
   const dispatch = useAppDispatch()
   const [clickState, setClickState] = useState(false)
   const {
@@ -31,7 +33,12 @@ const CreateNewColumn = ({ deskItemId }: CreateNewColumnInterface) => {
     dispatch(
       addColumnItem([
         ...columns,
-        { id: nanoid(), deskItemId: deskItemId, name: data.nameInput },
+        {
+          id: nanoid(),
+          name: data.nameInput,
+          deskItemId: deskItemId,
+          items: [],
+        } as ColumnType,
       ])
     )
     reset({

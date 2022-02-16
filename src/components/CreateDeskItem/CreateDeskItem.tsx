@@ -14,6 +14,7 @@ const CreateDeskItem = React.memo(() => {
     register,
     handleSubmit,
     setError,
+    reset,
     formState: { errors },
   } = useForm<Input>()
   const deskItem = useAppSelector((state) => state.deskItems.values)
@@ -38,6 +39,9 @@ const CreateDeskItem = React.memo(() => {
         message: 'Такое имя уже используется',
       })
     }
+    reset({
+      nameInput: '',
+    })
   }
 
   const newItemForm = (
